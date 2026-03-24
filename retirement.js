@@ -1,3 +1,11 @@
+/**
+ * A program that uses your current financials (Principal[savings], interest-rate, monthly-income) and the date
+ * to calculate when you will be able to retire
+ * @author Violet French https://github.com/Pirategirl9000
+ * @author Kyler Hanson  https://github.com/kyhans07
+ * @see https://github.com/Pirategirl9000/Retirement-Countdown
+ */
+
 // TODO: Add top level documentation
 // TODO: Add JSDocs
 
