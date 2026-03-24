@@ -34,6 +34,14 @@ const processEntries = (evt) => {
     evt.preventDefault();
     resetForm()
 
+    // Grab the values for validation
+    const name = nameIn.value;
+    const email = emailIn.value;
+    const date = new Date(dateIn.value);
+    const balance = investIn.value;
+    const monthlyIncome = addIn.value;
+    const interestRate = rateIn.value;
+
     // TODO: Validate Name
 
     // TODO: Validate Email
