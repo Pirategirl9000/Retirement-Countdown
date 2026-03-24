@@ -20,6 +20,8 @@ const testData  = $("#test_data");
 
 let projectionTimer = null;
 
+let interval;
+
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
