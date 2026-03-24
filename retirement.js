@@ -1,3 +1,6 @@
+// TODO: Add top level documentation
+// TODO: Add JSDocs
+
 "use strict";
 
 // Defer in HTML allows us to grab these immediately at the top
@@ -64,10 +67,11 @@ const startProjection = (name, bal, add, rate, years) => {
     statusMsg.style.color = "red";
     let count = 1;
 
-    // TO-DO: startYear = the current year
     const startYear = new Date().getFullYear();
 
     let formattedBal = formatter.format(bal);
+
+    //TODO: Maybe change to textContent since innerHTML is insecure, not a problem in this case but it's good practice.
     output.innerHTML = `Year ${startYear} = ${formattedBal}`;
 
     /* TODO: setup an interval to do the following
