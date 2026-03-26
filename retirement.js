@@ -130,8 +130,6 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
-    // TODO: Validate Date
-
     if (!date.trim()){
         $("date_error").textContent = dateIn.title;
         isValid = false;
