@@ -149,7 +149,7 @@ const processEntries = (evt) => {
 
     // Do checks on all number inputs to ensure they are a number and not less than zero
     if (isNaN(balance) || balance < 0) {
-        $("investment_error").textContent = investIn.title;
+        $("#investment_error").textContent = investIn.title;
         isValid = false;
     }
 
