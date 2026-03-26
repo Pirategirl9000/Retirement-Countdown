@@ -119,16 +119,10 @@ const processEntries = (evt) => {
 
     // TODO: Validate Name
 
-    // TODO: Validate Email
-    // https://www.geeksforgeeks.org/javascript/javascript-program-to-validate-an-email-address/
-    /*
-        According to the book we just add an event listener, typically people use regex to validate it. We should use
-        both since this adds two layers of security: HTML and JS
-        email.addEventListener("invalid", () => {
-            email.nextElementSibling.textContent = email.validationMessage;
-            email.focus();
-        });
-     */
+    /* TODO: Validate Email
+    const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
+    if (!emailPattern.test(emailIn.value.trim())) {
+    */
 
     // TODO: Validate Date
 
