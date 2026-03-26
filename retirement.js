@@ -126,7 +126,7 @@ const processEntries = (evt) => {
     // email validation
     const emailPattern = /^[\w.\-]+@[\w.\-]+\.[a-zA-Z]+$/;
     if (!emailPattern.test(email)) {
-        emailIn.nextElementSibling.textContent = "Enter a valid email.";
+        $("email_error").textContent = emailIn.title;
         isValid = false;
     }
 
