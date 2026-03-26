@@ -207,6 +207,12 @@ const startProjection = (name, bal, add, rate, years) => {
         end if
         add one to the count
      */
+
+    for (let i = 0; i < 12; i++){
+        // Calculate the new balance for the savings account
+        // Add the montly income, then multiply the account by it's interest rate
+        bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
+    }
 };
 
 /**
