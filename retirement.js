@@ -142,7 +142,7 @@ const processEntries = (evt) => {
         years = date.getFullYear() - current.getFullYear();
 
         if (years <= 0 || years > 75) {
-            $("#date_error").textContent = dateIn.title;
+            $("#retire_date_error").textContent = dateIn.title;
             isValid = false;
         }
     }
