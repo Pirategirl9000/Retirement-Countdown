@@ -167,13 +167,12 @@ const processEntries = (evt) => {
             errBox.innerText = e.message;
      */
 
-    try{
-
+    try {
         if(!isValid) throw new Error("Please correct the entries highlighted below");
 
         document.body.style.width = "350px";
         startProjection(name, balance, monthlyIncome, interestRate, years);
-    } catch(e){
+    } catch(e) {
         document.body.style.width = "700px";
         errBox.textContent = e.message;
     }
