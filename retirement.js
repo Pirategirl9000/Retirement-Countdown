@@ -230,8 +230,11 @@ const setTestData = () => {
     addIn.value = 500;
     rateIn.value = 5.5;
 
+    // Set the retirement date to be in ten years from now
     const retirementDate = new Date();
     retirementDate.setFullYear(retirementDate.getFullYear() + 10);
+
+    // Convert it to ISO string without the T in it
     dateIn.value = retirementDate.toISOString().split("T")[0];
 };
 
@@ -239,13 +242,18 @@ const setTestData = () => {
  * Resets the form and the interval
  */
 const resetForm = () => {
-    /* TODO:
-        clear all input fields
-        clear the interval
-        document.querySelectorAll(".error").forEach(s => s.textContent = "*");
-        set the body width to 350px (like code above)
-        set the focus to the name input field
-     */
+
+    // Reset the form and interval
+    form.reset();
+    clearInterval(projectionTimer);
+
+    // Reset all error spans to have their asterisks again
+    document.querySelectorAll(".error").forEach(elem =>elem.textContent = "*")
+
+    document.body.style.width = "350px";
+
+    statusMsg.style.color = "red";
+    nameIn.focus();
 };
 
 /**
