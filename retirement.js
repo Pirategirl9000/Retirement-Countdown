@@ -192,21 +192,9 @@ const startProjection = (name, bal, add, rate, years) => {
 
     let formattedBal = formatter.format(bal);
 
+    // Print the current year at the start with the starting balance
     output.textContent = `Year ${startYear} = ${formattedBal}`;
 
-    /* TODO: setup an interval to do the following
-        for (let i = 0; i < 12; i++) {
-            bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
-        }
-        format the balance like the starting code above
-        update the output like the starting code above
-        if count is >= years
-            clear interval
-            update the statusMsg like the starting code above
-            set the statusMsg color to green like the starting code above
-        end if
-        add one to the count
-     */
 
     projectionTimer = setInterval(() => {
         for (let i = 0; i < 12; i++){
@@ -215,17 +203,20 @@ const startProjection = (name, bal, add, rate, years) => {
             bal = ((bal + add) * (1 + (rate / 12 / 100))).toFixed(2);
         }
 
+        // Print the output for the current year
         output.textContent = `Year ${startYear + count}: ${formatter.format(bal)}`;
 
 
+        // See if we are done with the calculations
+        if (count >= years){
+            clearInterval(projectionTimer);
+            statusMsg.textContent = "Interval Complete!";
+            statusMsg.style.color = "red";
+        }
 
-
-
+        // Increment the current year we are on
+        count++;
     }, 1000);
-
-
-
-
 };
 
 /**
