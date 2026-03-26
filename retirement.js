@@ -119,19 +119,19 @@ const processEntries = (evt) => {
 
     // Ensure the name is not blank
     if (name.trim() === "") {
-        $("name_error").textContent = nameIn.title;
+        $("#name_error").textContent = nameIn.title;
         isValid = false;
     }
 
     // Make sure the email is valid
     const emailPattern = /^[\w.\-]+@[\w.\-]+\.[a-zA-Z]+$/;
     if (!emailPattern.test(email)) {
-        $("email_error").textContent = emailIn.title;
+        $("#email_error").textContent = emailIn.title;
         isValid = false;
     }
 
     if (!dateValue.trim()){
-        $("date_error").textContent = dateIn.title;
+        $("#date_error").textContent = dateIn.title;
         isValid = false;
     }  else {
         // Get Date objects for the current data and the date the user inputted for retirement
@@ -142,7 +142,7 @@ const processEntries = (evt) => {
         years = date.getFullYear() - current.getFullYear();
 
         if (years <= 0 || years > 75) {
-            $("date_error").textContent = dateIn.title;
+            $("#date_error").textContent = dateIn.title;
             isValid = false;
         }
     }
@@ -154,12 +154,12 @@ const processEntries = (evt) => {
     }
 
     if (isNaN(monthlyIncome) || monthlyIncome < 0) {
-        $("add_error").textContent = addIn.title;
+        $("#add_error").textContent = addIn.title;
         isValid = false;
     }
 
     if (isNaN(interestRate) || interestRate < 0) {
-        $("rate_error").textContent = rateIn.title;
+        $("#rate_error").textContent = rateIn.title;
         isValid = false;
     }
 
