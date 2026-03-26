@@ -142,7 +142,20 @@ const processEntries = (evt) => {
         }
     }
 
-    // TODO: Numeric Validations
+    if (isNaN(balance) || balance < 0) {
+        $("investment_error").textContent = investIn.title;
+        isValid = false;
+    }
+
+    if (isNaN(monthlyIncome) || monthlyIncome < 0) {
+        $("add_error").textContent = addIn.title;
+        isValid = false;
+    }
+
+    if (isNaN(interestRate) || interestRate < 0) {
+        $("rate_error").textContent = rateIn.title;
+        isValid = false;
+    }
 
     /* TODO: Code try-catch logic
         try
