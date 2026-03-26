@@ -169,9 +169,8 @@ const processEntries = (evt) => {
 
     try{
 
-        if(!isValid) {
-            throw new Error("Please correct the entries highlighted below")
-        }
+        if(!isValid) throw new Error("Please correct the entries highlighted below");
+
         document.body.style.width = "350px";
         startProjection(name, balance, monthlyIncome, interestRate, years);
     } catch(e){
