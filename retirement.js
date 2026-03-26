@@ -192,8 +192,7 @@ const startProjection = (name, bal, add, rate, years) => {
 
     let formattedBal = formatter.format(bal);
 
-    //TODO: Maybe change to textContent since innerHTML is insecure, not a problem in this case but it's good practice.
-    output.innerHTML = `Year ${startYear} = ${formattedBal}`;
+    output.textContent = `Year ${startYear} = ${formattedBal}`;
 
     /* TODO: setup an interval to do the following
         for (let i = 0; i < 12; i++) {
