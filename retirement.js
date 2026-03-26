@@ -131,7 +131,7 @@ const processEntries = (evt) => {
     }
 
     if (!dateValue.trim()){
-        $("#date_error").textContent = dateIn.title;
+        $("#retire_date_error").textContent = dateIn.title;
         isValid = false;
     }  else {
         // Get Date objects for the current data and the date the user inputted for retirement
