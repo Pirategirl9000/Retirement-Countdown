@@ -117,20 +117,20 @@ const processEntries = (evt) => {
     const monthlyIncome = addIn.value;
     const interestRate = rateIn.value;
 
-    // name validation
+    // Ensure the name is not blank
     if (name.trim() === "") {
         $("name_error").textContent = nameIn.title;
         isValid = false;
     }
 
-    // email validation
+    // Make sure the email is valid
     const emailPattern = /^[\w.\-]+@[\w.\-]+\.[a-zA-Z]+$/;
     if (!emailPattern.test(email)) {
         $("email_error").textContent = emailIn.title;
         isValid = false;
     }
 
-    if (!date.trim()){
+    if (!dateValue.trim()){
         $("date_error").textContent = dateIn.title;
         isValid = false;
     }  else {
@@ -138,13 +138,16 @@ const processEntries = (evt) => {
         const current = new Date();
         const date = new Date(dateValue);
 
+        // How many years we need to calculate for
         years = date.getFullYear() - current.getFullYear();
+
         if (years <= 0 || years > 75) {
             $("date_error").textContent = dateIn.title;
             isValid = false;
         }
     }
 
+    // Do checks on all number inputs to ensure they are a number and not less than zero
     if (isNaN(balance) || balance < 0) {
         $("investment_error").textContent = investIn.title;
         isValid = false;
@@ -160,6 +163,7 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
+    // See if we can start the projection or if they are still missing data
     try {
         if(!isValid) throw new Error("Please correct the entries highlighted below");
 
