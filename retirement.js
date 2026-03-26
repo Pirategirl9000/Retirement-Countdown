@@ -224,7 +224,15 @@ const startProjection = (name, bal, add, rate, years) => {
  */
 const setTestData = () => {
     resetForm();
-    // TODO: set default values for all input fields
+    nameIn.value = "Test name";
+    emailIn.value = "Test email";
+    investIn.value = 100000;
+    addIn.value = 500;
+    rateIn.value = 5.5;
+
+    const retirementDate = new Date();
+    retirementDate.setFullYear(retirementDate.getFullYear() + 10);
+    dateIn.value = retirementDate.toISOString().split("T")[0];
 };
 
 /**
