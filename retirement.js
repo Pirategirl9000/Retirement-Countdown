@@ -132,6 +132,18 @@ const processEntries = (evt) => {
 
     // TODO: Validate Date
 
+    if (!date.trim()){
+        $("date_error").textContent = dateIn.title;
+        isValid = false;
+    }  else {
+        const current = new Date();
+        years = date.getFullYear() - current.getFullYear();
+        if (years <= 0 || years > 75) {
+            $("date_error").textContent = dateIn.title;
+            isValid = false;
+        }
+    }
+
     // TODO: Numeric Validations
 
     /* TODO: Code try-catch logic
