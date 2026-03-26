@@ -118,8 +118,8 @@ const processEntries = (evt) => {
     const interestRate = rateIn.value;
 
     // name validation
-    if (name === "") {
-        nameIn.nextElementSibling.textContent = "Name is required.";
+    if (name.trim() === "") {
+        $("name_error").textContent = nameIn.title;
         isValid = false;
     }
 
