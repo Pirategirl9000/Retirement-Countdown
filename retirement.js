@@ -117,12 +117,18 @@ const processEntries = (evt) => {
     const monthlyIncome = addIn.value;
     const interestRate = rateIn.value;
 
-    // TODO: Validate Name
+    // name validation
+    if (name === "") {
+        nameIn.nextElementSibling.textContent = "Name is required.";
+        isValid = false;
+    }
 
-    /* TODO: Validate Email
-    const emailPattern = /^[\w\.\-]+@[\w\.\-]+\.[a-zA-Z]+$/;
-    if (!emailPattern.test(emailIn.value.trim())) {
-    */
+    // email validation
+    const emailPattern = /^[\w.\-]+@[\w.\-]+\.[a-zA-Z]+$/;
+    if (!emailPattern.test(email)) {
+        emailIn.nextElementSibling.textContent = "Enter a valid email.";
+        isValid = false;
+    }
 
     // TODO: Validate Date
 
