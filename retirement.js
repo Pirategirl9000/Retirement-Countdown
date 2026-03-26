@@ -107,7 +107,6 @@ const processEntries = (evt) => {
     let years = 0;
 
     evt.preventDefault();
-    resetForm()
 
     // Grab the values for validation
     const name = nameIn.value;
@@ -162,6 +161,8 @@ const processEntries = (evt) => {
         $("#rate_error").textContent = rateIn.title;
         isValid = false;
     }
+
+    resetForm();
 
     // See if we can start the projection or if they are still missing data
     try {
