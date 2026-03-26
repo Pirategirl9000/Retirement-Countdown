@@ -173,8 +173,6 @@ const processEntries = (evt) => {
         document.body.style.width = "700px";
         errBox.textContent = e.message;
     }
-
-
 };
 
 /**
