@@ -112,7 +112,7 @@ const processEntries = (evt) => {
     // Grab the values for validation
     const name = nameIn.value;
     const email = emailIn.value;
-    const date = new Date(dateIn.value);
+    const dateValue = dateIn.value;
     const balance = investIn.value;
     const monthlyIncome = addIn.value;
     const interestRate = rateIn.value;
@@ -134,7 +134,10 @@ const processEntries = (evt) => {
         $("date_error").textContent = dateIn.title;
         isValid = false;
     }  else {
+        // Get Date objects for the current data and the date the user inputted for retirement
         const current = new Date();
+        const date = new Date(dateValue);
+
         years = date.getFullYear() - current.getFullYear();
         if (years <= 0 || years > 75) {
             $("date_error").textContent = dateIn.title;
