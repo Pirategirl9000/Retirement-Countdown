@@ -224,8 +224,8 @@ const startProjection = (name, bal, add, rate, years) => {
  */
 const setTestData = () => {
     resetForm();
-    nameIn.value = "Test name";
-    emailIn.value = "Test email";
+    nameIn.value = "John Doe";
+    emailIn.value = "johnDoe@gmail.com";
     investIn.value = 100000;
     addIn.value = 500;
     rateIn.value = 5.5;
