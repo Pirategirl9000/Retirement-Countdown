@@ -157,16 +157,6 @@ const processEntries = (evt) => {
         isValid = false;
     }
 
-    /* TODO: Code try-catch logic
-        try
-            if not valid then throw error "Please correct the entries highlighted below."
-            document.body.style.width = "350px";
-            startProjection(nameIn.value, invest, add, rate, years);
-         catch(e)
-            set the body width to 700px (like code above)
-            errBox.innerText = e.message;
-     */
-
     try {
         if(!isValid) throw new Error("Please correct the entries highlighted below");
 
