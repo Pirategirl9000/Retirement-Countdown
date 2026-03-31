@@ -24,7 +24,19 @@ The purpose of this program is to take in information about the user's financial
 * `formatter` - An IntL number formatter set up to convert a number to US formatted currency
 
 ### Functions and Listeners
-* 
+* `processEntries`
+  * Processes the entries from the form doing data validation and conversions
+  * If it's valid data it passes this to `startProjection`
+* `startProjection`
+  * Starts an interval object to perform monthly evaluations of what your savings account will have after calculating the interest, monthly add-in, and current savings
+  * It will then display that information to the user at the end of a year
+  * Calculates a new year in one second increments
+* `setTestData`
+  * Loads a bunch of test data for easier testing
+* `resetForm`
+  * resets the form data and the outputs returning the program to its initial state
+* `document.onDOMContentLoaded`
+  * Adds event listeners to the form and buttons which calls the relevant functions
 
 ## New Concepts
 * Date Manipulation
