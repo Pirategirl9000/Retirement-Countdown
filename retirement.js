@@ -112,9 +112,9 @@ const processEntries = (evt) => {
     const name = nameIn.value;
     const email = emailIn.value;
     const dateValue = dateIn.value;
-    let balance = investIn.value;
-    const monthlyIncome = addIn.value;
-    const interestRate = rateIn.value;
+    let balance = parseFloat(investIn.value);
+    let monthlyIncome = parseFloat(addIn.value);
+    let interestRate = parseFloat(rateIn.value);
 
     // Ensure the name is not blank
     if (name.trim() === "") {
@@ -151,13 +151,14 @@ const processEntries = (evt) => {
         $("#investment_error").textContent = investIn.title;
         isValid = false;
     } else {
-        balance = parseFloat(balance);
-        balance = balance.toFixed(2);
+        balance = Number(balance.toFixed(2));
     }
 
     if (isNaN(monthlyIncome) || monthlyIncome < 0) {
         $("#add_error").textContent = addIn.title;
         isValid = false;
+    } else {
+        monthlyIncome = Number(monthlyIncome.toFixed(2));
     }
 
     if (isNaN(interestRate) || interestRate < 0) {
