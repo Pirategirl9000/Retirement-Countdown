@@ -112,7 +112,7 @@ const processEntries = (evt) => {
     const name = nameIn.value;
     const email = emailIn.value;
     const dateValue = dateIn.value;
-    const balance = investIn.value;
+    let balance = investIn.value;
     const monthlyIncome = addIn.value;
     const interestRate = rateIn.value;
 
@@ -150,6 +150,9 @@ const processEntries = (evt) => {
     if (isNaN(balance) || balance < 0) {
         $("#investment_error").textContent = investIn.title;
         isValid = false;
+    } else {
+        balance = parseFloat(balance);
+        balance = balance.toFixed(2);
     }
 
     if (isNaN(monthlyIncome) || monthlyIncome < 0) {
