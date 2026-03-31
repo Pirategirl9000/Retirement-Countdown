@@ -116,6 +116,8 @@ const processEntries = (evt) => {
     let monthlyIncome = parseFloat(addIn.value);
     let interestRate = parseFloat(rateIn.value);
 
+    resetForm();
+
     // Ensure the name is not blank
     if (name.trim() === "") {
         $("#name_error").textContent = nameIn.title;
@@ -165,8 +167,6 @@ const processEntries = (evt) => {
         $("#rate_error").textContent = rateIn.title;
         isValid = false;
     }
-
-    resetForm();
 
     // See if we can start the projection or if they are still missing data
     try {
