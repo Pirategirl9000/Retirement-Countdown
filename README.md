@@ -5,10 +5,13 @@
 
 ## Table of Contents
 * [Authors](#authors)
+* [Purpose](#purpose)
 * [Script Breakdown](#script-breakdown)
 * [New Concepts Used](#new-concepts)
 * [Output](#output)
 * [Credits](#credits)
+
+## Purpose
 
 ## Script Breakdown
 
