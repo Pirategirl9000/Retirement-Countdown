@@ -12,6 +12,7 @@
 * [Credits](#credits)
 
 ## Purpose
+### The purpose of this program is to take in information about the user's financials (savings balance, monthly savings additions, interest rate) and information about the person (name, email) and the date they want to retire. It then uses this data to determine what the projected income of the user will be based on their financials on their projected retirement date
 
 ## Script Breakdown
 
