@@ -46,4 +46,4 @@ The purpose of this program is to take in information about the user's financial
 * Regional Money Formatting
 
 ## Credits
-###### This is an adaptation of a script provided by [Debbie Johnson](https://github.com/dejohns02)
+###### This is an adaptation of a script provided by [Debbie Johnson](https://github.com/dejohns2)
