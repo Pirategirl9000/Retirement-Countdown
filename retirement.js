@@ -230,9 +230,9 @@ const setTestData = () => {
     resetForm();
     nameIn.value = "John Doe";
     emailIn.value = "johnDoe@gmail.com";
-    investIn.value = 100000;
-    addIn.value = 500;
-    rateIn.value = 5.5;
+    investIn.value = "100000";
+    addIn.value = "500";
+    rateIn.value = "5.5";
 
     // Set the retirement date to be in ten years from now
     const retirementDate = new Date();
