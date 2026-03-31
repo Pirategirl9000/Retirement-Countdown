@@ -258,6 +258,8 @@ const resetForm = () => {
     document.body.style.width = "350px";
 
     statusMsg.style.color = "red";
+    statusMsg.textContent = "";
+    output.textContent = "";
     nameIn.focus();
 };
 
