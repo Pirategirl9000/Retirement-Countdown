@@ -225,6 +225,18 @@ const startProjection = (name, bal, add, rate, years) => {
 };
 
 /**
+ * Saves the input values to local storage
+ */
+const setLocalStorage = (name, email, date, balance, monthlyIncome, interestRate) => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("date", date);
+    localStorage.setItem("balance", balance);
+    localStorage.setItem("monthlyIncome", monthlyIncome);
+    localStorage.setItem("interestRate", interestRate);
+}
+
+/**
  * Loads test data for the program
  */
 const setTestData = () => {
