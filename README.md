@@ -50,6 +50,7 @@ The purpose of this program is to take in information about the user's financial
 * Regex & Data Validation
 * Error Creation and Handling
 * Regional Money Formatting
+* Local Storage manipulation
 
 ## Credits
 ###### This is an adaptation of a script provided by [Debbie Johnson](https://github.com/dejohns2)
