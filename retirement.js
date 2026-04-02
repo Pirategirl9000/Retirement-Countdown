@@ -176,7 +176,7 @@ const processEntries = (evt) => {
         document.body.style.width = "350px";
 
         // Save their inputs to local storage so we can load them on page reload
-        setLocalStorage();
+        setLocalStorage(name, email, dateValue, balance, monthlyIncome, interestRate);
 
         // Start performing the calculations for each year until their retirement
         startProjection(name, balance, monthlyIncome, interestRate, years);
@@ -233,13 +233,13 @@ const startProjection = (name, bal, add, rate, years) => {
 /**
  * Saves the input values to local storage
  */
-const setLocalStorage = () => {
-    localStorage.setItem("name", nameIn.value);
-    localStorage.setItem("email", emailIn.value);
-    localStorage.setItem("date", dateIn.value);
-    localStorage.setItem("balance", investIn.value);
-    localStorage.setItem("monthlyAddIn", addIn.value);
-    localStorage.setItem("interestRate", rateIn.value);
+const setLocalStorage = (name, email, date, balance, monthlyAddIn, interestRate) => {
+    localStorage.setItem("name", name);
+    localStorage.setItem("email", email);
+    localStorage.setItem("date", date);
+    localStorage.setItem("balance", balance);
+    localStorage.setItem("monthlyAddIn", monthlyAddIn);
+    localStorage.setItem("interestRate", interestRate);
 }
 
 /**
