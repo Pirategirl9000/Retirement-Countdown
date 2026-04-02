@@ -39,7 +39,6 @@ The purpose of this program is to take in information about the user's financial
   * Adds event listeners to the form and buttons which calls the relevant functions
 * `setLocalStorage`
   * Takes in all the input data from the form and saves it to local storage
-  * Only gets given valid input data
 * `getLocalStorage`
   * Pulls any information about previous inputs and puts them in the inputs when the page is loaded
   * Pulls the info from local storage
