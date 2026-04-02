@@ -173,6 +173,11 @@ const processEntries = (evt) => {
         if(!isValid) throw new Error("Please correct the entries highlighted below");
 
         document.body.style.width = "350px";
+
+        // Save their inputs to local storage so we can load them on page reload
+        setLocalStorage(name, email, dateValue, balance, monthlyIncome, interestRate);
+
+        // Start performing the calculations for each year until their retirement
         startProjection(name, balance, monthlyIncome, interestRate, years);
     } catch(e) {
         document.body.style.width = "700px";
@@ -243,6 +248,35 @@ const setLocalStorage = (name, email, date, balance, monthlyAddIn, interestRate)
 }
 
 /**
+ * Tries to load any values from local storage
+ */
+const loadLocalStorage = () => {
+    if (localStorage.getItem("name")) {
+        nameIn.value = localStorage.getItem("name");
+    }
+
+    if (localStorage.getItem("email")) {
+        emailIn.value = localStorage.getItem("email");
+    }
+
+    if (localStorage.getItem("date")) {
+        dateIn.value = localStorage.getItem("date");
+    }
+
+    if (localStorage.getItem("balance")) {
+        investIn.value = localStorage.getItem("balance");
+    }
+
+    if (localStorage.getItem("monthlyAddIn")) {
+        addIn.value = localStorage.getItem("monthlyAddIn");
+    }
+
+    if (localStorage.getItem("interestRate")) {
+        rateIn.value = localStorage.getItem("interestRate");
+    }
+}
+
+/**
  * Loads test data for the program
  */
 const setTestData = () => {
@@ -288,4 +322,6 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", processEntries);
     form.addEventListener("reset", resetForm);
     testData.addEventListener("click", setTestData);
+
+    loadLocalStorage();
 });
