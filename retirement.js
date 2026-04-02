@@ -116,9 +116,6 @@ const processEntries = (evt) => {
     let monthlyIncome = parseFloat(addIn.value);
     let interestRate = parseFloat(rateIn.value);
 
-    // Save their inputs to local storage so we can load them on page reload
-    setLocalStorage();
-
     resetForm();
 
     // Ensure the name is not blank
@@ -175,7 +172,11 @@ const processEntries = (evt) => {
     try {
         if(!isValid) throw new Error("Please correct the entries highlighted below");
 
+
         document.body.style.width = "350px";
+
+        // Save their inputs to local storage so we can load them on page reload
+        setLocalStorage();
 
         // Start performing the calculations for each year until their retirement
         startProjection(name, balance, monthlyIncome, interestRate, years);
