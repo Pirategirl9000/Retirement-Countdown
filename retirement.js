@@ -116,6 +116,9 @@ const processEntries = (evt) => {
     let monthlyIncome = parseFloat(addIn.value);
     let interestRate = parseFloat(rateIn.value);
 
+    // Save their inputs to local storage so we can load them on page reload
+    setLocalStorage();
+
     resetForm();
 
     // Ensure the name is not blank
@@ -174,9 +177,6 @@ const processEntries = (evt) => {
 
         document.body.style.width = "350px";
 
-        // Save their inputs to local storage so we can load them on page reload
-        setLocalStorage(name, email, dateValue, balance, monthlyIncome, interestRate);
-
         // Start performing the calculations for each year until their retirement
         startProjection(name, balance, monthlyIncome, interestRate, years);
     } catch(e) {
@@ -231,20 +231,14 @@ const startProjection = (name, bal, add, rate, years) => {
 
 /**
  * Saves the input values to local storage
- * @param name The name stored in the input field
- * @param email The email stored in the input field
- * @param date The date stored in the input field
- * @param balance The balance stored in the input field
- * @param monthlyAddIn The amount of money you add to the account monthly input field
- * @param interestRate The interest rate for the account stored in the input field
  */
-const setLocalStorage = (name, email, date, balance, monthlyAddIn, interestRate) => {
-    localStorage.setItem("name", name);
-    localStorage.setItem("email", email);
-    localStorage.setItem("date", date);
-    localStorage.setItem("balance", balance);
-    localStorage.setItem("monthlyAddIn", monthlyAddIn);
-    localStorage.setItem("interestRate", interestRate);
+const setLocalStorage = () => {
+    localStorage.setItem("name", nameIn.value);
+    localStorage.setItem("email", emailIn.value);
+    localStorage.setItem("date", dateIn.value);
+    localStorage.setItem("balance", investIn.value);
+    localStorage.setItem("monthlyAddIn", addIn.value);
+    localStorage.setItem("interestRate", rateIn.value);
 }
 
 /**
