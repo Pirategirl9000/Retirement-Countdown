@@ -246,29 +246,19 @@ const setLocalStorage = (name, email, date, balance, monthlyAddIn, interestRate)
  * Tries to load any values from local storage
  */
 const loadLocalStorage = () => {
-    if (localStorage.getItem("name")) {
-        nameIn.value = localStorage.getItem("name");
-    }
+    const name = localStorage.getItem("name");
+    const email = localStorage.getItem("email");
+    const date = localStorage.getItem("date");
+    const balance = localStorage.getItem("balance");
+    const monthlyAddIn = localStorage.getItem("monthlyAddIn");
+    const interestRate = localStorage.getItem("interestRate");
 
-    if (localStorage.getItem("email")) {
-        emailIn.value = localStorage.getItem("email");
-    }
-
-    if (localStorage.getItem("date")) {
-        dateIn.value = localStorage.getItem("date");
-    }
-
-    if (localStorage.getItem("balance")) {
-        investIn.value = localStorage.getItem("balance");
-    }
-
-    if (localStorage.getItem("monthlyAddIn")) {
-        addIn.value = localStorage.getItem("monthlyAddIn");
-    }
-
-    if (localStorage.getItem("interestRate")) {
-        rateIn.value = localStorage.getItem("interestRate");
-    }
+    if (name) nameIn.value = name;
+    if (email) emailIn.value = email;
+    if (date) dateIn.value = date;
+    if (balance) investIn.value = balance;
+    if (monthlyAddIn) addIn.value = monthlyAddIn;
+    if (interestRate) rateIn.value = interestRate;
 }
 
 /**
