@@ -226,13 +226,19 @@ const startProjection = (name, bal, add, rate, years) => {
 
 /**
  * Saves the input values to local storage
+ * @param name The name stored in the input field
+ * @param email The email stored in the input field
+ * @param date The date stored in the input field
+ * @param balance The balance stored in the input field
+ * @param monthlyAddIn The amount of money you add to the account monthly input field
+ * @param interestRate The interest rate for the account stored in the input field
  */
-const setLocalStorage = (name, email, date, balance, monthlyIncome, interestRate) => {
+const setLocalStorage = (name, email, date, balance, monthlyAddIn, interestRate) => {
     localStorage.setItem("name", name);
     localStorage.setItem("email", email);
     localStorage.setItem("date", date);
     localStorage.setItem("balance", balance);
-    localStorage.setItem("monthlyIncome", monthlyIncome);
+    localStorage.setItem("monthlyAddIn", monthlyAddIn);
     localStorage.setItem("interestRate", interestRate);
 }
 
